@@ -22,13 +22,13 @@ INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 
 INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 100);
 INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 100);
 
-INSERT INTO ZOODB.animal_food_item (animal_id, food_item_id) VALUES (2, 2);
-INSERT INTO ZOODB.animal_food_item (animal_id, food_item_id) VALUES (2, 3);
+INSERT INTO ZOODB.ANIMAL_FOOD_ITEM (animal_id, food_item_id) VALUES (2, 2);
+INSERT INTO ZOODB.ANIMAL_FOOD_ITEM (animal_id, food_item_id) VALUES (2, 3);
 
-INSERT INTO ZOODB.category (category_type) VALUES ('mamal');
-INSERT INTO ZOODB.category (category_type) VALUES ('bird');
-INSERT INTO ZOODB.category (category_type) VALUES ('reptile');
+INSERT INTO ZOODB.CATEGORY (category_type) VALUES ('mamal');
+INSERT INTO ZOODB.CATEGORY (category_type) VALUES ('bird');
+INSERT INTO ZOODB.CATEGORY (category_type) VALUES ('reptile');
 
-INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('meat', '300', NULL);
-INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('sprouted beans', '100', NULL);
-INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('oats', '50', NULL);
+INSERT INTO ZOODB.FOOD_ITEM (`name`, quantity, supplier_id) VALUES ('meat', '300', NULL);
+INSERT INTO ZOODB.FOOD_ITEM (`name`, quantity, supplier_id) VALUES ('sprouted beans', '100', NULL);
+INSERT INTO ZOODB.FOOD_ITEM (`name`, quantity, supplier_id) VALUES ('oats', '50', NULL);
