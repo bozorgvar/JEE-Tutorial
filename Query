@@ -1,0 +1,34 @@
+CREATE TABLE ANIMAL (animal_id INT NOT NULL AUTO_INCREMENT, `type` VARCHAR(33), total_no INT, category_id INT, PRIMARY KEY (animal_id));
+CREATE TABLE STAFF (STAFF_ID INT NOT NULL AUTO_INCREMENT, AGE INT, GENDER VARCHAR(191), `NAME` VARCHAR(191), SALLARY INT, PRIMARY KEY (STAFF_ID));
+CREATE TABLE animal_food_item (animal_id INT NOT NULL, food_item_id INT NOT NULL, PRIMARY KEY (animal_id, food_item_id));
+CREATE TABLE cage (cage_id INT NOT NULL, cage_no VARCHAR(33), location VARCHAR(33), animal_id INT, PRIMARY KEY (cage_id));
+CREATE TABLE category (category_id INT NOT NULL AUTO_INCREMENT, category_type VARCHAR(33), PRIMARY KEY (category_id));
+CREATE TABLE emergency (emergency_id INT NOT NULL AUTO_INCREMENT, `type` VARCHAR(33), `case` VARCHAR(108), emergencycol VARCHAR(108), PRIMARY KEY (emergency_id));
+CREATE TABLE external_vet (vet_id INT NOT NULL, external_vetcol VARCHAR(33), visiting_fees INT, PRIMARY KEY (vet_id));
+CREATE TABLE food_item (food_item_id INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(33), quantity VARCHAR(33), supplier_id INT, PRIMARY KEY (food_item_id));
+CREATE TABLE in_house_vet (vet_id INT NOT NULL, salary INT, PRIMARY KEY (vet_id));
+CREATE TABLE supplier (supplier_id INT NOT NULL AUTO_INCREMENT, supplier_name VARCHAR(33), supplier_no INT, address VARCHAR(33), PRIMARY KEY (supplier_id));
+CREATE TABLE vet (vet_id INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(33), PRIMARY KEY (vet_id));
+
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('Elephant', 2, 1);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('zibra', 3, 1);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('lion', 2, 1);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('snake', 5, 3);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('owl', 6, 2);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('turtle', 24, 3);
+INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('chicken', 8, 2);
+
+INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 100);
+INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 100);
+INSERT INTO ZOODB.STAFF (AGE, GENDER, `NAME`, SALLARY) VALUES (200, 'M', 'raj', 100);
+
+INSERT INTO ZOODB.animal_food_item (animal_id, food_item_id) VALUES (2, 2);
+INSERT INTO ZOODB.animal_food_item (animal_id, food_item_id) VALUES (2, 3);
+
+INSERT INTO ZOODB.category (category_type) VALUES ('mamal');
+INSERT INTO ZOODB.category (category_type) VALUES ('bird');
+INSERT INTO ZOODB.category (category_type) VALUES ('reptile');
+
+INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('meat', '300', NULL);
+INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('sprouted beans', '100', NULL);
+INSERT INTO ZOODB.food_item (`name`, quantity, supplier_id) VALUES ('oats', '50', NULL);
