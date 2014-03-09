@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp;
+package com.mycompany.myapp.entities;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -21,23 +21,14 @@ import javax.validation.constraints.Size;
  * @author ammar
  */
 @Entity
-@Table(name = "STAFF")
-@NamedQueries({
-    @NamedQuery(name = "Staff.findAll", query = "SELECT s FROM Staff s")})
 public class Staff implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "STAFF_ID")
     private Integer staffId;
     @Column(name = "AGE")
     private Integer age;
-    @Size(max = 191)
-    @Column(name = "GENDER")
     private String gender;
-    @Size(max = 191)
-    @Column(name = "NAME")
     private String name;
     @Column(name = "SALLARY")
     private Integer sallary;
