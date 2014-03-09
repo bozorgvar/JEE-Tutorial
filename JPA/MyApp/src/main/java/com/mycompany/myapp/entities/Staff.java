@@ -5,15 +5,23 @@
 package com.mycompany.myapp.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 /**
@@ -22,8 +30,8 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "STAFF")
-@NamedQueries({
-    @NamedQuery(name = "Staff.findAll", query = "SELECT s FROM Staff s")})
+//@NamedQueries({
+//    @NamedQuery(name = "Staff.findAll", query = "SELECT s FROM Staff s")})
 public class Staff implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -33,14 +41,22 @@ public class Staff implements Serializable {
     private Integer staffId;
     @Column(name = "AGE")
     private Integer age;
-    @Size(max = 191)
+    @Enumerated(EnumType.STRING)
     @Column(name = "GENDER")
-    private String gender;
+    private Gender gender;
     @Size(max = 191)
     @Column(name = "NAME")
     private String name;
     @Column(name = "SALLARY")
     private Integer sallary;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "start_date")
+    private Date start_Date;
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] pic;
+    @Transient
+    private String empAsString;
 
     public Staff() {
     }
@@ -65,11 +81,11 @@ public class Staff implements Serializable {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -87,6 +103,22 @@ public class Staff implements Serializable {
 
     public void setSallary(Integer sallary) {
         this.sallary = sallary;
+    }
+
+    public byte[] getPic() {
+        return pic;
+    }
+
+    public void setPic(byte[] pic) {
+        this.pic = pic;
+    }
+
+    public Date getStart_Date() {
+        return start_Date;
+    }
+
+    public void setStart_Date(Date start_Date) {
+        this.start_Date = start_Date;
     }
 
     @Override
