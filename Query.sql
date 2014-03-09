@@ -1,3 +1,4 @@
+-- this file contains table creation for starting the tutorial
 CREATE TABLE ANIMAL (animal_id INT NOT NULL AUTO_INCREMENT, `type` VARCHAR(33), total_no INT, category_id INT, PRIMARY KEY (animal_id));
 CREATE TABLE STAFF (STAFF_ID INT NOT NULL AUTO_INCREMENT, AGE INT, GENDER VARCHAR(191), `NAME` VARCHAR(191), SALLARY INT, PRIMARY KEY (STAFF_ID));
 CREATE TABLE ANIMAL_FOOD_ITEM (animal_id INT NOT NULL, food_item_id INT NOT NULL, PRIMARY KEY (animal_id, food_item_id));
