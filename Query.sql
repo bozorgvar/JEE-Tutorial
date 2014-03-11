@@ -51,6 +51,21 @@ ALTER TABLE `ZOODB`.`ANIMAL_FOOD_ITEM`
   ON UPDATE NO ACTION
 , ADD INDEX `animal_food_item_food_item_FK` (`food_item_id` ASC) ;
 
+ALTER TABLE `ZOODB`.`IN_HOUSE_VET` 
+  ADD CONSTRAINT `in_house_vet_vet_FK`
+  FOREIGN KEY (`vet_id` )
+  REFERENCES `ZOODB`.`VET` (`vet_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `in_house_vet_vet_FK` (`vet_id` ASC) ;
+
+ALTER TABLE `ZOODB`.`EXTERNAL_VET` 
+  ADD CONSTRAINT `external_vet_vet_FK`
+  FOREIGN KEY (`vet_id` )
+  REFERENCES `ZOODB`.`VET` (`vet_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `external_vet_vet_FK` (`vet_id` ASC) ;
 
 ------
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('Elephant', 2, 1);
