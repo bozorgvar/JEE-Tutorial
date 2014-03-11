@@ -27,9 +27,32 @@ ALTER TABLE `ZOODB`.`ANIMAL`
   ON UPDATE NO ACTION
 , ADD INDEX `animal_category_FK` (`category_id` ASC) ;
 
+ALTER TABLE `ZOODB`.`FOOD_ITEM` 
+  ADD CONSTRAINT `food_item_supplier_FK`
+  FOREIGN KEY (`supplier_id` )
+  REFERENCES `ZOODB`.`SUPPLIER` (`supplier_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `food_item_supplier_FK` (`supplier_id` ASC) ;
+
+ALTER TABLE `ZOODB`.`ANIMAL_FOOD_ITEM` 
+  ADD CONSTRAINT `animal_food_item_animal_FK`
+  FOREIGN KEY (`animal_id` )
+  REFERENCES `ZOODB`.`ANIMAL` (`animal_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `animal_food_item_animal_FK` (`animal_id` ASC) ;
+
+ALTER TABLE `ZOODB`.`ANIMAL_FOOD_ITEM` 
+  ADD CONSTRAINT `animal_food_item_food_item_FK`
+  FOREIGN KEY (`food_item_id` )
+  REFERENCES `ZOODB`.`FOOD_ITEM` (`food_item_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `animal_food_item_food_item_FK` (`food_item_id` ASC) ;
 
 
-
+------
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('Elephant', 2, 1);
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('zibra', 3, 1);
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('lion', 2, 1);
