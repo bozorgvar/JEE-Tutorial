@@ -10,6 +10,25 @@ CREATE TABLE FOOD_ITEM (food_item_id INT NOT NULL AUTO_INCREMENT, `name` VARCHAR
 CREATE TABLE IN_HOUSE_VET (vet_id INT NOT NULL, salary INT, PRIMARY KEY (vet_id));
 CREATE TABLE SUPPLIER (supplier_id INT NOT NULL AUTO_INCREMENT, supplier_name VARCHAR(33), supplier_no INT, address VARCHAR(33), PRIMARY KEY (supplier_id));
 CREATE TABLE VET (vet_id INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(33), PRIMARY KEY (vet_id));
+------
+ALTER TABLE `ZOODB`.`CAGE` 
+  ADD CONSTRAINT `cage_animal_FK`
+  FOREIGN KEY (`animal_id` )
+  REFERENCES `ZOODB`.`ANIMAL` (`animal_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `cage_animal_FK` (`animal_id` ASC) ;
+
+ALTER TABLE `ZOODB`.`ANIMAL` 
+  ADD CONSTRAINT `animal_category_FK`
+  FOREIGN KEY (`category_id` )
+  REFERENCES `ZOODB`.`CATEGORY` (`category_id` )
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+, ADD INDEX `animal_category_FK` (`category_id` ASC) ;
+
+
+
 
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('Elephant', 2, 1);
 INSERT INTO ZOODB.ANIMAL (`type`, total_no, category_id) VALUES ('zibra', 3, 1);
