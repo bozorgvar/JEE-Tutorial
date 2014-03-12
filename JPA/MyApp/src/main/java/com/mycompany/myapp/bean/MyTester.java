@@ -22,7 +22,8 @@ import sun.misc.IOUtils;
 
 /**
  *
- * @author ammar bozorgvar
+ * @author Ammar Bozorgvar at
+ * http://stackoverflow.com/users/382154/ammar-bozorgvar
  */
 @Singleton
 @LocalBean
