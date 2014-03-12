@@ -26,7 +26,8 @@ import javax.validation.constraints.Size;
 
 /**
  *
- * @author ammar
+ * @author Ammar Bozorgvar at
+ * http://stackoverflow.com/users/382154/ammar-bozorgvar
  */
 @Entity
 @Table(name = "STAFF")

@@ -6,7 +6,8 @@ package com.mycompany.myapp.entities;
 
 /**
  *
- * @author ammar
+ * @author Ammar Bozorgvar at
+ * http://stackoverflow.com/users/382154/ammar-bozorgvar
  */
 public enum Gender {
     M,F
