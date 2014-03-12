@@ -7,6 +7,7 @@ package com.mycompany.inheritance.entities;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,6 +24,15 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "IN_HOUSE_VET")
+@DiscriminatorValue("IN_VET")
 public class InHouseVet extends Vet{
-    private Integer salary;    
+    private Integer salary;
+
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Integer salary) {
+        this.salary = salary;
+    }
 }
