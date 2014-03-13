@@ -29,23 +29,23 @@ public class MyTester {
 
     @PostConstruct
     public void myMain() {
-        Animal cat = new Animal();
-        cat.setType("cat");
-        cat.setTotalNo(10);
-        
-        FoodItem meat = new FoodItem();
-        meat.setName("meat");
-        FoodItem chicken = new FoodItem();
-        chicken.setName("chicken");
-        
-        cat.getFoodItemList().add(meat);
-        meat.getAnimalList().add(cat);
-        cat.getFoodItemList().add(chicken);
-        chicken.getAnimalList().add(cat);
-        
-        em.persist(cat);
-        em.persist(meat);
-        em.persist(chicken);
+//        Animal cat = new Animal();
+//        cat.setType("cat");
+//        cat.setTotalNo(10);
+//        
+//        FoodItem meat = new FoodItem();
+//        meat.setName("meat");
+//        FoodItem chicken = new FoodItem();
+//        chicken.setName("chicken");
+//        
+//        cat.getFoodItemList().add(meat);
+//        meat.getAnimalList().add(cat);
+//        cat.getFoodItemList().add(chicken);
+//        chicken.getAnimalList().add(cat);
+//        
+//        em.persist(cat);
+//        em.persist(meat);
+//        em.persist(chicken);
         
 //        Animal animal = new Animal();
 //        animal.setType("Frog");
@@ -66,17 +66,15 @@ public class MyTester {
 //        category.getAnimalList().add(animal);
 //        em.persist(animal);
         
-//        Animal animal = new Animal();
-//        animal.setType("Tiger");
-//        animal.setTotalNo(3);  
-//        Cage cage = new Cage();
-//        cage.setCageNo("D3");
-//        cage.setLocation("Down South");
-//        cage.setAnimal(animal);
-//        animal.setCage(cage);
-//        System.err.println(cage.getCageNo().toString());
-//        System.err.println(animal.getType().toString());
-//        em.persist(cage);
-//        em.persist(animal);
+        Animal animal = new Animal();
+        animal.setType("Tiger");
+        animal.setTotalNo(3);  
+        Cage cage = new Cage();
+        cage.setCageNo("D3");
+        cage.setLocation("Down South");
+        cage.setAnimal(animal);
+        animal.setCage(cage);
+        em.persist(cage);
+        em.persist(animal);
     }
 }
