@@ -103,7 +103,17 @@ public class MyTest {
         /*
          * for retrieving collection we need join
          */
-        Query query = em.createQuery("select a.type, f.name from Animal a Join a.foodItems f");
+//        Query query = em.createQuery("select a.type, f.name from Animal a Join a.foodItems f");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- " + myArray[1]);
+//        }
+
+        /*
+         * left join
+         */
+        Query query = em.createQuery("select a.type, f.name from Animal a LEFT Join a.foodItems f");
         List list = query.getResultList();
         for (Object obj : list) {
             Object[] myArray = (Object[]) obj;
