@@ -80,6 +80,9 @@ public class MyTest {
 //            System.out.println(a.getType() + " --- " + a.getTotalNo());
 //        }
 
+        /*
+         * simple join in JPQL
+         */
 //        Query query = em.createQuery("select a.type, a.totalNo from Category c Join c.animalList a");
 //        List list = query.getResultList();
 //        for (Object obj : list) {
@@ -87,7 +90,20 @@ public class MyTest {
 //            System.out.println(myArray[0] + " --- " + myArray[1]);
 //        }
 
-        Query query = em.createQuery("select a.type, a.category.categoryType from Animal a");
+        /*
+         * for retrieving simple object we don't need join
+         */
+//        Query query = em.createQuery("select a.type, a.category.categoryType from Animal a");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- " + myArray[1]);
+//        }
+
+        /*
+         * for retrieving collectopn we need join
+         */
+        Query query = em.createQuery("select a.type, f.name from Animal a Join a.foodItems f");
         List list = query.getResultList();
         for (Object obj : list) {
             Object[] myArray = (Object[]) obj;
