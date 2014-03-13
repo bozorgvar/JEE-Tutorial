@@ -30,7 +30,6 @@ public class Cage implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @NotNull
     @Column(name = "cage_id")
     private Integer cageId;
     @Size(max = 33)
