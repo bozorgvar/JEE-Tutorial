@@ -32,14 +32,14 @@ public class MyTest {
 
     @PostConstruct
     public void myMain() {
-        
+
         //        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.totalNo > ?1", Animal.class);
         //        query.setParameter(1, 25);
         //        List<Animal> list = query.getResultList();
         //        for(Animal a : list){
         //            System.out.println(a.getType() + " --- " + a.getTotalNo());
         //        }
-        
+
         //        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.totalNo > :num", Animal.class);
         //        query.setParameter("num", 25);
         //        List<Animal> list = query.getResultList();
@@ -53,18 +53,47 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
 //        TypedQuery<Animal> query = em.createNamedQuery("Animal.simple", Animal.class);
 //        List<Animal> list = query.getResultList();
 //        for (Animal obj : list) {
 //            System.out.println(obj.getType() + " --- " + obj.getTotalNo());
 //        }
 
-        /*this is not working*/
+        /*
+         * this is not working
+         */
 //        TypedQuery<AnimalInfo> query = em.createQuery("select com.mycompany.select.entities.AnimalInfo( a.type, a.totalNo) from Animal a", AnimalInfo.class);
 //        List<AnimalInfo> list = query.getResultList();
 //        for (AnimalInfo obj : list) {
 //            System.out.println(obj.getType() + " --- " + obj.getTotalNo());
 //        }
+
+        /*
+         * pageination
+         */
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a", Animal.class);
+//        query.setFirstResult(2);
+//        query.setMaxResults(3);
+//        List<Animal> list = query.getResultList();
+//        for (Animal a : list) {
+//            System.out.println(a.getType() + " --- " + a.getTotalNo());
+//        }
+
+//        Query query = em.createQuery("select a.type, a.totalNo from Category c Join c.animalList a");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- " + myArray[1]);
+//        }
+
+        Query query = em.createQuery("select a.type, a.category.categoryType from Animal a");
+        List list = query.getResultList();
+        for (Object obj : list) {
+            Object[] myArray = (Object[]) obj;
+            System.out.println(myArray[0] + " --- " + myArray[1]);
+        }
+
+
     }
 }
