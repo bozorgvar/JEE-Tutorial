@@ -38,27 +38,27 @@ public class MyTest {
         //        for(Animal a : list){
         //            System.out.println(a.getType() + " --- " + a.getTotalNo());
         //        }
-        
+
         //        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.totalNo > :num", Animal.class);
         //        query.setParameter("num", 25);
         //        List<Animal> list = query.getResultList();
         //        for(Animal a : list){
         //            System.out.println(a.getType() + " --- " + a.getTotalNo());
         //        }
-        
+
         //        Query query = em.createQuery("select a.type, a.totalNo from Animal a");
         //        List list = query.getResultList();
         //        for (Object obj : list) {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         //        TypedQuery<Animal> query = em.createNamedQuery("Animal.simple", Animal.class);
         //        List<Animal> list = query.getResultList();
         //        for (Animal obj : list) {
         //            System.out.println(obj.getType() + " --- " + obj.getTotalNo());
         //        }
-        
+
         /*
          * this is not working
          */
@@ -67,7 +67,7 @@ public class MyTest {
         //        for (AnimalInfo obj : list) {
         //            System.out.println(obj.getType() + " --- " + obj.getTotalNo());
         //        }
-        
+
         /*
          * pageination
          */
@@ -78,7 +78,7 @@ public class MyTest {
         //        for (Animal a : list) {
         //            System.out.println(a.getType() + " --- " + a.getTotalNo());
         //        }
-        
+
         /*
          * simple join in JPQL
          */
@@ -88,7 +88,7 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * for retrieving simple object we don't need join
          */
@@ -98,7 +98,7 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * for retrieving collection we need join
          */
@@ -108,7 +108,7 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * left join
          */
@@ -118,7 +118,7 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * more than one join
          */
@@ -128,7 +128,7 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * BETWEEN expersion
          */
@@ -140,14 +140,89 @@ public class MyTest {
         //            Object[] myArray = (Object[]) obj;
         //            System.out.println(myArray[0] + " --- " + myArray[1]);
         //        }
-        
+
         /*
          * LIKE expersion
          */
-        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.type LIKE '%er'", Animal.class);
-        List<Animal> list = query.getResultList();
-        for (Animal animal : list) {
-            System.out.println(animal.getType());
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.type LIKE '%er'", Animal.class);
+//        List<Animal> list = query.getResultList();
+//        for (Animal animal : list) {
+//            System.out.println(animal.getType());
+//        }
+
+        /*
+         * IN expersion
+         */
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.category.categoryType IN ('mamal','bird')", Animal.class);
+//        List<Animal> list = query.getResultList();
+//        for (Animal animal : list) {
+//            System.out.println(animal.getType());
+//        }
+
+        /*
+         * IS EMPTY expersion
+         */
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.foodItems IS EMPTY", Animal.class);
+//        List<Animal> list = query.getResultList();
+//        for (Animal animal : list) {
+//            System.out.println(animal.getType());
+//        }
+
+        /*
+         * IN expersion
+         */
+//        TypedQuery<Animal> query = em.createQuery("select a from Animal a where a.category IS NOT NULL", Animal.class);
+//        List<Animal> list = query.getResultList();
+//        for (Animal animal : list) {
+//            System.out.println(animal.getType());
+//        }
+
+        /*
+         * Aggregate functions
+         */
+//        Query query = em.createQuery("select SUM(a.totalNo) from Animal a");
+//        Object sum = query.getSingleResult();
+//        System.out.println("Total number of animals in the zoo is " + sum);
+        
+        /*
+         * GROUP BY
+         */
+//        Query query = em.createQuery("select c.categoryType, SUM(a.totalNo) from Category c LEFT JOIN c.animalList a GROUP BY c");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- "+ myArray[1]);
+//        }
+        
+        /*
+         * HAVING
+         */
+//        Query query = em.createQuery("select c.categoryType, SUM(a.totalNo) from Category c LEFT JOIN c.animalList a GROUP BY c HAVING SUM(a.totalNo) < 20");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- "+ myArray[1]);
+//        }
+        
+        /*
+         * ORDER BY
+         */
+//        Query query = em.createQuery("select c.categoryType, SUM(a.totalNo) from Category c LEFT JOIN c.animalList a GROUP BY c HAVING SUM(a.totalNo) < 20 ORDER BY SUM(a.totalNo) DESC");
+//        List list = query.getResultList();
+//        for (Object obj : list) {
+//            Object[] myArray = (Object[]) obj;
+//            System.out.println(myArray[0] + " --- "+ myArray[1]);
+//        }
+        
+        /*
+         * CASE WHEN
+         */
+        Query query = em.createQuery("select a.type, CASE WHEN a.totalNo<10 THEN 'low' WHEN a.totalNo<20 THEN 'mediom' ELSE 'HIGH' END from Animal a");
+        List list = query.getResultList();
+        for (Object obj : list) {
+            Object[] myArray = (Object[]) obj;
+            System.out.println(myArray[0] + " --- "+ myArray[1]);
         }
+        
     }
 }
