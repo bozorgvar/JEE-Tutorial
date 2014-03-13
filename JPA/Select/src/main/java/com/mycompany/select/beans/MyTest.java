@@ -101,7 +101,7 @@ public class MyTest {
 //        }
 
         /*
-         * for retrieving collectopn we need join
+         * for retrieving collection we need join
          */
         Query query = em.createQuery("select a.type, f.name from Animal a Join a.foodItems f");
         List list = query.getResultList();
