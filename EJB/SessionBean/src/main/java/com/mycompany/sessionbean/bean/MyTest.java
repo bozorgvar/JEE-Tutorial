@@ -46,14 +46,22 @@ public class MyTest {
 //        myBean.endTheBean();
 //    }
     
+//    @EJB
+//    MySingletonBeanLocal myBean;
+//    
+//    @PostConstruct
+//    public void myMain() {
+//        myBean.increment();
+//        myBean.increment();
+//        System.out.println(myBean.getNumber());
+//        
+//    }
+    
     @EJB
-    MySingletonBeanLocal myBean;
+    TransBean myBean;
     
     @PostConstruct
     public void myMain() {
-        myBean.increment();
-        myBean.increment();
-        System.out.println(myBean.getNumber());
-        
+        myBean.saveAnimal();        
     }
 }
