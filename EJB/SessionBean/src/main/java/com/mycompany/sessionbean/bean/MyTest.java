@@ -35,14 +35,25 @@ public class MyTest {
 //        }
 //    }
     
+//    @EJB
+//    MyStatefullBeanLocal myBean;
+//    
+//    @PostConstruct
+//    public void myMain() {
+//        myBean.setAnimalType("cheetah");
+//        myBean.setAnimalTotalNo(3);
+//        myBean.finish();
+//        myBean.endTheBean();
+//    }
+    
     @EJB
-    MyStatefullBeanLocal myBean;
+    MySingletonBeanLocal myBean;
     
     @PostConstruct
     public void myMain() {
-        myBean.setAnimalType("cheetah");
-        myBean.setAnimalTotalNo(3);
-        myBean.finish();
-        myBean.endTheBean();
+        myBean.increment();
+        myBean.increment();
+        System.out.println(myBean.getNumber());
+        
     }
 }
