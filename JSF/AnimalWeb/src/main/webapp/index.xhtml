@@ -1,17 +1,29 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
         <title>My Animal Page</title>
     </h:head>
     <h:body>
         <h1>My Animal Page</h1>
-        <h:form>
+        <h:form prependId="false">
             Animal Type : <h:inputText id="animalType" value="#{animalBean.type}"/><br/>
             Animal Total Number : <h:inputText id="animalTotalNo" value="#{animalBean.totalNo}"/><br/> 
+            Animal password : <h:inputSecret id="password" value="#{animalBean.password}"/><br/>
+            Some Text : <h:inputTextarea rows="5" cols="50" id="myText" value="#{animalBean.myText}" /><br/>
+            <h:inputHidden id="myHiddenField"/>
+            <h:outputText value="#{animalBean.type}" /><br/>
+            <h:outputFormat value="{0} was a good {1}">
+                <f:param value="Sam"/>
+                <f:param value="kid"/>
+            </h:outputFormat><br/>
+            <h:graphicImage url="/images/JSF.png" /> <br/>
+            
             <h:commandButton id="submitButton" value="submit" action="#{animalBean.saveAnimal}"/>
         </h:form>
+        <h:outputText value="#{animalBean.type}"/><br/>
+        <h:outputText value="#{animalBean.totalNo}"/><br/>
     </h:body>
-</html>
-
+</html> 
