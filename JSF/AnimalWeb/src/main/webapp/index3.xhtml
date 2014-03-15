@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>My Animal Page</title>
+    </h:head>
+    <h:body>
+        <h1>My Animal Page</h1>
+        <h:form prependId="false">
+            Animal Type : <h:inputText id="animalType" value="#{animalBean.type}"/><br/>
+            Animal Total Number : <h:inputText id="animalTotalNo" value="#{animalBean.totalNo}"/><br/>
+            check : <h:selectBooleanCheckbox value="#{animalBean.mailMe}"></h:selectBooleanCheckbox><br/>
+            <h:commandButton value="submit by POST" action="#{animalBean.redirecting}"/>
+            <h:commandButton value="see all page" action="all"/>
+        </h:form>
+        <h:outputText value="#{animalBean.type}"/><br/>
+    </h:body>
+</html>

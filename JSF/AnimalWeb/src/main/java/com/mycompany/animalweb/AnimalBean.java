@@ -102,6 +102,15 @@ public class AnimalBean {
         //        return "show";
         return null;
     }
+    
+    public String redirecting(){
+        try {
+            System.out.println("Redirection");
+        } catch (Exception e) {
+            return "failure";
+        }
+        return "success";
+    }
 
     public void someMethod(ActionEvent e) {
     }
