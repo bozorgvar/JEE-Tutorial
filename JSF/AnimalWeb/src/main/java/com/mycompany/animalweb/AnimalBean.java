@@ -4,6 +4,8 @@
  */
 package com.mycompany.animalweb;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.event.ActionEvent;
@@ -81,12 +83,21 @@ public class AnimalBean {
         this.selectedPerson = selectedPerson;
     }
 
+    public List<Person> getPeopleList(){
+        List<Person> peopleList = new ArrayList<Person>();
+        peopleList.add(new Person(1, "Ammar"));
+        peopleList.add(new Person(2, "Reza"));
+        peopleList.add(new Person(3, "Ali"));
+        peopleList.add(new Person(4, "alex"));
+        return peopleList;
+    }
+    
     public String saveAnimal() {
         System.out.println("this is " + selectedPerson);
 
-//        for (int i : selectedPeople) {
-//            System.out.println(i);
-//        }
+        for (int i : selectedPeople) {
+            System.out.println("selected people are "+i);
+        }
 
         //        return "show";
         return null;

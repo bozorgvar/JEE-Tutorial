@@ -21,13 +21,33 @@
                 <f:selectItem itemValue="3" itemLabel="Reza"/>
                 <f:selectItem itemValue="4" itemLabel="Alex"/>
             </h:selectManyCheckbox><br/>
-            <h:selectOneRadio value="#{animalBean.selectedPerson}">
+            
+            <!--            <h:selectOneRadio value="">
+                            <f:selectItem itemValue="1" itemLabel="Ammar"/>
+                            <f:selectItem itemValue="2" itemLabel="Ali"/>
+                            <f:selectItem itemValue="3" itemLabel="Reza"/>
+                            <f:selectItem itemValue="4" itemLabel="Alex"/>
+                        </h:selectOneRadio><br/>-->
+            <h:selectManyListbox value="#{animalBean.selectedPeople}">
                 <f:selectItem itemValue="1" itemLabel="Ammar"/>
                 <f:selectItem itemValue="2" itemLabel="Ali"/>
                 <f:selectItem itemValue="3" itemLabel="Reza"/>
                 <f:selectItem itemValue="4" itemLabel="Alex"/>
-            </h:selectOneRadio><br/>
+            </h:selectManyListbox><br/>
+            
+            <h:selectOneMenu value="#{animalBean.selectedPerson}">
+                <f:selectItem itemValue="1" itemLabel="Ammar"/>
+                <f:selectItem itemValue="2" itemLabel="Ali"/>
+                <f:selectItem itemValue="3" itemLabel="Reza"/>
+                <f:selectItem itemValue="4" itemLabel="Alex"/>
+            </h:selectOneMenu><br/>
+            
+            <h:selectOneMenu value="#{animalBean.selectedPerson}">
+                <f:selectItems value="#{animalBean.peopleList}" var="p" itemLabel="#{p.name}" itemValue="#{p.id}" />
+            </h:selectOneMenu><br/>
+            
             <h:commandButton id="submitButton" value="submit by POST" actionListener="#{animalBean.saveAnimal}"/>
+            
         </h:form>
         <h:outputText value="#{animalBean.mailMe}"/><br/>
     </h:body>
