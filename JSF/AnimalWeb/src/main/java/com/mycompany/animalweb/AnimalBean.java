@@ -21,6 +21,9 @@ public class AnimalBean {
     private int totalNo;
     private String password;
     private String myText;
+    private boolean mailMe;
+    private int[] selectedPeople;
+    private int selectedPerson;
 
     public String getType() {
         return type;
@@ -54,13 +57,41 @@ public class AnimalBean {
         this.myText = myText;
     }
 
+    public boolean isMailMe() {
+        return mailMe;
+    }
+
+    public void setMailMe(boolean mailMe) {
+        this.mailMe = mailMe;
+    }
+
+    public int[] getSelectedPeople() {
+        return selectedPeople;
+    }
+
+    public void setSelectedPeople(int[] selectedPeople) {
+        this.selectedPeople = selectedPeople;
+    }
+
+    public int getSelectedPerson() {
+        return selectedPerson;
+    }
+
+    public void setSelectedPerson(int selectedPerson) {
+        this.selectedPerson = selectedPerson;
+    }
+
     public String saveAnimal() {
-        System.out.println("saving Animal " + type);
-//        return "show";
+        System.out.println("this is " + selectedPerson);
+
+//        for (int i : selectedPeople) {
+//            System.out.println(i);
+//        }
+
+        //        return "show";
         return null;
     }
-    
-    public void someMethod(ActionEvent e){
-        
+
+    public void someMethod(ActionEvent e) {
     }
 }

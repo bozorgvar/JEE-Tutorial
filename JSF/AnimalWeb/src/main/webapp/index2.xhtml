@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>My Animal Page</title>
+    </h:head>
+    <h:body>
+        <h1>My Animal Page</h1>
+        <h:form prependId="false">
+            Animal Type : <h:inputText id="animalType" value="#{animalBean.type}"/><br/>
+            Animal Total Number : <h:inputText id="animalTotalNo" value="#{animalBean.totalNo}"/><br/>
+            I like to receive  mails:
+            <h:selectBooleanCheckbox value="#{animalBean.mailMe}">
+            </h:selectBooleanCheckbox><br/>
+
+            <h:selectManyCheckbox value="#{animalBean.selectedPeople}">
+                <f:selectItem itemValue="1" itemLabel="Ammar"/>
+                <f:selectItem itemValue="2" itemLabel="Ali"/>
+                <f:selectItem itemValue="3" itemLabel="Reza"/>
+                <f:selectItem itemValue="4" itemLabel="Alex"/>
+            </h:selectManyCheckbox><br/>
+            <h:selectOneRadio value="#{animalBean.selectedPerson}">
+                <f:selectItem itemValue="1" itemLabel="Ammar"/>
+                <f:selectItem itemValue="2" itemLabel="Ali"/>
+                <f:selectItem itemValue="3" itemLabel="Reza"/>
+                <f:selectItem itemValue="4" itemLabel="Alex"/>
+            </h:selectOneRadio><br/>
+            <h:commandButton id="submitButton" value="submit by POST" actionListener="#{animalBean.saveAnimal}"/>
+        </h:form>
+        <h:outputText value="#{animalBean.mailMe}"/><br/>
+    </h:body>
+</html>
