@@ -20,8 +20,12 @@
                 <f:param value="kid"/>
             </h:outputFormat><br/>
             <h:graphicImage url="/images/JSF.png" /> <br/>
-            
-            <h:commandButton id="submitButton" value="submit" actionListener="#{animalBean.someMethod}"/>
+            <h:outputLink value="http://github.com">Goto Github</h:outputLink><br/>
+            <h:commandButton id="submitButton" value="submit by POST" actionListener="#{animalBean.someMethod}"/>
+            <h:commandLink id="submitLink" value="submit by POST" actionListener="#{animalBean.someMethod}"/>
+            <h:commandButton id="submitButton2" value="submit2 by POST" actionListener="#{animalBean.saveAnimal}"/>
+            <h:button id="someButton" value="submit by GET" outcome="show" />
+            <h:link id="someLink" value="submit by GET" outcome="show" />
         </h:form>
         <h:outputText value="#{animalBean.type}"/><br/>
         <h:outputText value="#{animalBean.totalNo}"/><br/>
