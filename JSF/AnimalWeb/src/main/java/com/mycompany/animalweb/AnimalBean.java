@@ -60,7 +60,7 @@ public class AnimalBean {
         return null;
     }
     
-    public void  someMethod(ActionEvent e){
+    public void someMethod(ActionEvent e){
         
     }
 }

@@ -21,7 +21,7 @@
             </h:outputFormat><br/>
             <h:graphicImage url="/images/JSF.png" /> <br/>
             
-            <h:commandButton id="submitButton" value="submit" action="#{animalBean.saveAnimal}"/>
+            <h:commandButton id="submitButton" value="submit" actionListener="#{animalBean.someMethod}"/>
         </h:form>
         <h:outputText value="#{animalBean.type}"/><br/>
         <h:outputText value="#{animalBean.totalNo}"/><br/>
