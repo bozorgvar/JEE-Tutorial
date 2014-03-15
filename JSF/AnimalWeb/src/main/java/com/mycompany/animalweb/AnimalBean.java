@@ -6,6 +6,7 @@ package com.mycompany.animalweb;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.event.ActionEvent;
 
 /**
  *
@@ -15,8 +16,11 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean//(name = "someBean")
 @RequestScoped
 public class AnimalBean {
+
     private String type;
     private int totalNo;
+    private String password;
+    private String myText;
 
     public String getType() {
         return type;
@@ -33,9 +37,30 @@ public class AnimalBean {
     public void setTotalNo(int totalNo) {
         this.totalNo = totalNo;
     }
-    
-    public String saveAnimal(){
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getMyText() {
+        return myText;
+    }
+
+    public void setMyText(String myText) {
+        this.myText = myText;
+    }
+
+    public String saveAnimal() {
         System.out.println("saving Animal " + type);
-        return "show";
+//        return "show";
+        return null;
+    }
+    
+    public void  someMethod(ActionEvent e){
+        
     }
 }
