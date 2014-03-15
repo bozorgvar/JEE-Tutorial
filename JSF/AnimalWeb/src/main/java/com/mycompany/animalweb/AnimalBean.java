@@ -12,7 +12,7 @@ import javax.faces.bean.RequestScoped;
  * @author Ammar Bozorgvar at
  * http://stackoverflow.com/users/382154/ammar-bozorgvar
  */
-@ManagedBean
+@ManagedBean//(name = "someBean")
 @RequestScoped
 public class AnimalBean {
     private String type;
@@ -32,5 +32,10 @@ public class AnimalBean {
 
     public void setTotalNo(int totalNo) {
         this.totalNo = totalNo;
+    }
+    
+    public String saveAnimal(){
+        System.out.println("saving Animal " + type);
+        return "show";
     }
 }
